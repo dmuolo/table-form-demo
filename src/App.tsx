@@ -1,5 +1,7 @@
 import './App.css';
-import { CustomToolbar, MainView } from './components/index';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { DetailView, TableView } from './views';
+import { CustomToolbar } from './components/index';
 import { Box, createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 
 const theme = createTheme({
@@ -24,9 +26,16 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <CustomToolbar title='Fellowship of Christian Athletes' headerElementVariant='h5' />
-      <MainView />
+      <Router>
+        <CssBaseline />
+        <CustomToolbar title='Fellowship of Christian Athletes' headerElementVariant='h5' />
+        {/* <Container> */}
+        <Switch>
+          <Route path='/' exact component={TableView} />
+          {/* <Route path='/details/:id' component={DetailView} /> */}
+        </Switch>
+        {/* </Container> */}
+      </Router>
     </ThemeProvider>
   );
 }

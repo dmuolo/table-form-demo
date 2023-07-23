@@ -2,34 +2,16 @@ import { FC, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import { IconButton } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { mockData } from '../../data/mockData';
+import { Link } from 'react-router-dom';
 
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-material.css';
 
-interface Props {
-  // Define props (if any) here
-}
+interface Props {}
 
 const CustomTable: FC<Props> = () => {
-  const [rowData] = useState([
-    { name: 'John Doe', position: 'Director, Agile PMO', location: 'Remote' },
-    { name: 'Jane Doe', position: 'Area Representative', location: 'Kansas City, MO' },
-    { name: 'Michael Scott', position: 'Manager', location: 'Scranton, PA', isActive: true },
-    {
-      name: 'Scott Lee',
-      position: 'Director of System Engineering',
-      location: 'Kansas City, MO',
-      isActive: true,
-    },
-    { name: 'Jack Sparrow', position: 'Ambassador', location: 'Lenexa, KS', isActive: true },
-    { name: 'Sarah Lane', position: 'Ambassador', location: 'Kansas City, MO', isActive: true },
-    { name: 'Jared Thomas', position: 'Janitor', location: 'Kansas City, MO', isActive: true },
-    { name: 'Dennis Lin', position: 'Scrum Master', location: 'Remote', isActive: true },
-    { name: 'James Sunderland', position: 'Software Engineer', location: 'Remote', isActive: true },
-    { name: 'Tim Rowe', position: 'Software Engineer', location: 'Remote', isActive: false },
-    { name: 'Tammy Finn', position: 'Director', location: 'Kansas City, MO', isActive: true },
-    { name: 'Spencer Tate', position: 'Software Engineer', location: 'Remote', isActive: true },
-  ]);
+  const [rowData] = useState(mockData);
 
   const columnDefs = [
     { field: 'name', filter: true },
@@ -49,13 +31,13 @@ const CustomTable: FC<Props> = () => {
     },
     {
       headerName: '',
-      cellRenderer: () => {
+      cellRenderer: params => {
         return (
-          <>
+          <Link to={`/details/${params.id}`}>
             <IconButton size='small'>
               <ArrowForwardIosIcon />
             </IconButton>
-          </>
+          </Link>
         );
       },
     },
@@ -73,12 +55,12 @@ const CustomTable: FC<Props> = () => {
       <div className='ag-theme-material' style={{ height: 600, width: 900 }}>
         <AgGridReact
           suppressAutoSize
-          rowData={rowData} // Row Data for Rows
-          columnDefs={columnDefs} // Column Defs for Columns
+          rowData={rowData}
+          columnDefs={columnDefs}
           defaultColDef={defaultColDef}
           gridOptions={{}}
-          animateRows={true} // Optional - set to 'true' to have rows animate when sorted
-          rowSelection='multiple' // Options - allows click selection of rows
+          animateRows={true}
+          rowSelection='multiple'
           pagination
           paginationPageSize={10}
           suppressHorizontalScroll
