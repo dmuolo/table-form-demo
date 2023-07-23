@@ -22,9 +22,13 @@ const CustomTable: FC<Props> = () => {
       field: 'isActive',
       cellRenderer: params => {
         return params.value ? (
-          <span style={{ color: 'green' }}>✔️</span>
+          <div style={{ textAlign: 'center' }}>
+            <span style={{ color: 'green' }}>✔️</span>
+          </div>
         ) : (
-          <span style={{ color: 'red' }}>❌</span>
+          <div style={{ textAlign: 'center' }}>
+            <span style={{ color: 'red' }}>❌</span>
+          </div>
         );
       },
       width: 120,
@@ -33,7 +37,7 @@ const CustomTable: FC<Props> = () => {
       headerName: '',
       cellRenderer: params => {
         return (
-          <Link to={`/details/${params.id}`}>
+          <Link to={`/details/${params.data.id}`}>
             <IconButton size='small'>
               <ArrowForwardIosIcon />
             </IconButton>
@@ -47,12 +51,12 @@ const CustomTable: FC<Props> = () => {
     cellStyle: {
       textAlign: 'left',
       fontFamily: 'Gotham A, Gotham B, Helvetica Neue, Helvetica, Arial, sans-serif',
-    }, // Align all cell data to the left
+    },
   };
 
   return (
     <>
-      <div className='ag-theme-material' style={{ height: 600, width: 900 }}>
+      <div className='ag-theme-material' style={{ height: 500, width: 1000 }}>
         <AgGridReact
           suppressAutoSize
           rowData={rowData}
@@ -62,7 +66,7 @@ const CustomTable: FC<Props> = () => {
           animateRows={true}
           rowSelection='multiple'
           pagination
-          paginationPageSize={10}
+          paginationPageSize={8}
           suppressHorizontalScroll
         />
       </div>
