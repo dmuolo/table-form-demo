@@ -1,3 +1,3 @@
-import CustomToolbar from './CustomToolbar'
+import CustomToolbar from './CustomToolbar';
 
-export default CustomToolbar
+export default CustomToolbar;

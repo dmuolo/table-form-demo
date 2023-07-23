@@ -4,7 +4,7 @@ import { combineReducers } from '@reduxjs/toolkit';
 import counterSlice from './slices/counterSlice';
 
 const rootReducer = combineReducers({
-  counterSlice
+  counterSlice,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
