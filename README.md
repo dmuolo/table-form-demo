@@ -1,3 +1,11 @@
+# Getting Started | Local Dev
+
+1. cd into the root project folder & "npm install" to install dependencies
+
+2. run "npm run dev" to run locally
+
+# Vite-provided Instructions:
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
