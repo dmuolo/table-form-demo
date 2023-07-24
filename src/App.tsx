@@ -1,8 +1,8 @@
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { DetailView, TableView } from './views';
 import { CustomToolbar, MainContainer } from './components/index';
-import { Box, createTheme, CssBaseline, ThemeProvider } from '@mui/material';
+import { DetailView, TableView } from './views';
 
 const theme = createTheme({
   spacing: 8,

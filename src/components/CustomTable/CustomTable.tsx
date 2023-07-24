@@ -1,20 +1,25 @@
-import { FC, useState } from 'react';
-import { AgGridReact } from 'ag-grid-react';
-import { IconButton } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { mockData } from '../../data/mockData';
+import { IconButton } from '@mui/material';
+import { AgGridReact } from 'ag-grid-react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-material.css';
 
-interface Props {}
+interface Props {
+  rowData: any;
+}
 
-const CustomTable: FC<Props> = () => {
-  const [rowData] = useState(mockData);
-
+const CustomTable: FC<Props> = ({ rowData }) => {
   const columnDefs = [
-    { field: 'name', filter: true },
+    {
+      field: 'name',
+      filter: true,
+      cellRenderer: params => {
+        return params.data.firstName + ' ' + params.data.lastName;
+      },
+    },
     { field: 'position', filter: true, width: 240 },
     { field: 'location' },
     {

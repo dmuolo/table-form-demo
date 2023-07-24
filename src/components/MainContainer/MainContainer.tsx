@@ -1,5 +1,5 @@
+import { Container, Grid, Typography } from '@mui/material';
 import { FC } from 'react';
-import { Container, Grid, Paper, Typography } from '@mui/material';
 
 const MainContainer: FC = props => {
   return (

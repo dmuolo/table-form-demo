@@ -1,7 +1,7 @@
 import { AppBar, Toolbar, Typography } from '@mui/material';
-import CustomIconButton from '../CustomIconButton/CustomIconButton';
-import pngLogo from '../../assets/logo.png';
 import { FC } from 'react';
+import pngLogo from '../../assets/logo.png';
+import CustomIconButton from '../CustomIconButton/CustomIconButton';
 
 type TypographyVariant =
   | 'h1'

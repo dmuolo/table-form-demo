@@ -1,11 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit';
-
-// slices
-import counterSlice from './slices/counterSlice';
+import employeeSlice from './slices/employeeSlice';
 
 const rootReducer = combineReducers({
-  counterSlice,
+  employeeSlice,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
+
 export default rootReducer;
