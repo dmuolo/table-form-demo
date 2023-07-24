@@ -60,6 +60,17 @@ const CustomTable: FC<Props> = ({ rowData }) => {
     },
   };
 
+  const gridOptions = {
+    // Your AG Grid options go here
+    // For example, columnDefs, rowData, etc.
+    rowHeight: 50, // Increase this value to make the rows taller
+    defaultColDef: {
+      // Increase this value to make the columns wider
+      width: 200,
+      resizable: true, // Enable column resizing by dragging
+    },
+  };
+
   return (
     <>
       <StyledContainer className='ag-theme-material '>
@@ -68,7 +79,7 @@ const CustomTable: FC<Props> = ({ rowData }) => {
           rowData={rowData}
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
-          gridOptions={{}}
+          gridOptions={gridOptions}
           animateRows={true}
           rowSelection='multiple'
           pagination

@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
 export const StyledContainer = styled.div`
-  height: 500px;
-  width: 1000px;
+  width: 70%;
+  height: 80vh;
 `;
 
 export const AlignTextCenter = styled.div`
