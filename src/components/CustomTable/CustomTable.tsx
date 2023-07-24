@@ -21,7 +21,7 @@ const CustomTable: FC<Props> = ({ rowData }) => {
         return params.data.firstName + ' ' + params.data.lastName;
       },
     },
-    { field: 'position', filter: true, width: 240 },
+    { field: 'position', filter: true, width: '300vh' },
     { field: 'location' },
     {
       headerName: 'Is Active',
@@ -40,7 +40,7 @@ const CustomTable: FC<Props> = ({ rowData }) => {
       width: 120,
     },
     {
-      headerName: '',
+      headerName: 'View Details',
       cellRenderer: params => {
         return (
           <Link to={`/details/${params.data.id}`}>
