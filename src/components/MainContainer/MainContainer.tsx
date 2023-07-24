@@ -1,10 +1,13 @@
 import { Container, Grid, Typography } from '@mui/material';
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
-const MainContainer: FC = props => {
+interface MainContainerProps {
+  children: ReactNode;
+}
+
+const MainContainer: FC<MainContainerProps> = props => {
   return (
     <Container maxWidth='xl' sx={{ marginTop: '2.5rem', textAlign: 'left', positiion: 'relative' }}>
-      {/* Header */}
       <Grid
         container
         justifyContent='center'

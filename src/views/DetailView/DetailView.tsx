@@ -5,7 +5,6 @@ import {
   Grid,
   MenuItem,
   TextField,
-  Tooltip,
   useTheme,
 } from '@mui/material';
 import { useFormik } from 'formik';
@@ -150,25 +149,19 @@ const DetailView: FC<Props> = () => {
         </Grid>
         <Grid container item>
           <Grid item xs={2}>
-            <Tooltip
-              title='Your message when the form is not dirty'
-              open={!isFormDirty}
-              enterDelay={500}
+            <Button
+              color='primary'
+              variant='contained'
+              style={{
+                backgroundColor: theme.palette.primary.main,
+                opacity: isFormDirty ? '100%' : '40%',
+                color: 'white',
+              }}
+              type='submit'
+              disabled={!isFormDirty}
             >
-              <Button
-                color='primary'
-                variant='contained'
-                style={{
-                  backgroundColor: theme.palette.primary.main,
-                  opacity: isFormDirty ? '100%' : '40%',
-                  color: 'white',
-                }}
-                type='submit'
-                disabled={!isFormDirty}
-              >
-                Update
-              </Button>
-            </Tooltip>
+              Update
+            </Button>
           </Grid>
           <Grid item xs={2}>
             <Link to='/'>

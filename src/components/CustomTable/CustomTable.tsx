@@ -3,6 +3,7 @@ import { IconButton } from '@mui/material';
 import { AgGridReact } from 'ag-grid-react';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { AlignTextCenter, ColoredSpan, StyledContainer } from './CustomTable.Styles';
 
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-material.css';
@@ -27,13 +28,13 @@ const CustomTable: FC<Props> = ({ rowData }) => {
       field: 'isActive',
       cellRenderer: params => {
         return params.value ? (
-          <div style={{ textAlign: 'center' }}>
-            <span style={{ color: 'green' }}>✔️</span>
-          </div>
+          <AlignTextCenter>
+            <ColoredSpan color='green'>✔️</ColoredSpan>
+          </AlignTextCenter>
         ) : (
-          <div style={{ textAlign: 'center' }}>
-            <span style={{ color: 'red' }}>❌</span>
-          </div>
+          <AlignTextCenter>
+            <ColoredSpan color='red'>❌</ColoredSpan>
+          </AlignTextCenter>
         );
       },
       width: 120,
@@ -61,7 +62,7 @@ const CustomTable: FC<Props> = ({ rowData }) => {
 
   return (
     <>
-      <div className='ag-theme-material' style={{ height: 500, width: 1000 }}>
+      <StyledContainer className='ag-theme-material '>
         <AgGridReact
           suppressAutoSize
           rowData={rowData}
@@ -74,7 +75,7 @@ const CustomTable: FC<Props> = ({ rowData }) => {
           paginationPageSize={8}
           suppressHorizontalScroll
         />
-      </div>
+      </StyledContainer>
     </>
   );
 };

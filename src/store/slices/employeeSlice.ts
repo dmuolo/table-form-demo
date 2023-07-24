@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { mockData } from '../../data/mockData';
+import { publishEmployeeRecordUpdated } from '../../utils/pubsub';
 
 export interface Employee {
   firstName: string;
@@ -28,6 +29,8 @@ const employeeSlice = createSlice({
 
       if (employeeIndex !== -1) {
         state.employees[employeeIndex] = { ...state.employees[employeeIndex], ...updatedData };
+
+        publishEmployeeRecordUpdated({ success: true });
       }
     },
   },
