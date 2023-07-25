@@ -72,22 +72,20 @@ const CustomTable: FC<CustomTableProps> = ({ rowData }) => {
   };
 
   return (
-    <>
-      <StyledContainer className='ag-theme-material '>
-        <AgGridReact
-          suppressAutoSize
-          rowData={rowData}
-          columnDefs={columnDefs}
-          defaultColDef={defaultColDef}
-          gridOptions={gridOptions}
-          animateRows={true}
-          rowSelection='multiple'
-          pagination
-          paginationPageSize={8}
-          suppressHorizontalScroll
-        />
-      </StyledContainer>
-    </>
+    <StyledContainer className='ag-theme-material '>
+      <AgGridReact
+        suppressAutoSize
+        rowData={rowData}
+        columnDefs={columnDefs}
+        defaultColDef={defaultColDef}
+        gridOptions={gridOptions}
+        animateRows={true}
+        rowSelection='multiple'
+        pagination
+        paginationPageSize={8}
+        suppressHorizontalScroll
+      />
+    </StyledContainer>
   );
 };
 
