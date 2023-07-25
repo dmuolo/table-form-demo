@@ -61,13 +61,10 @@ const CustomTable: FC<CustomTableProps> = ({ rowData }) => {
   };
 
   const gridOptions = {
-    // Your AG Grid options go here
-    // For example, columnDefs, rowData, etc.
-    rowHeight: 50, // Increase this value to make the rows taller
+    rowHeight: 50,
     defaultColDef: {
-      // Increase this value to make the columns wider
       width: 200,
-      resizable: true, // Enable column resizing by dragging
+      resizable: true,
     },
   };
 
