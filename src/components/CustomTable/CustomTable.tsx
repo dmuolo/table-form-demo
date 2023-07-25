@@ -8,11 +8,11 @@ import { AlignTextCenter, ColoredSpan, StyledContainer } from './CustomTable.Sty
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-material.css';
 
-interface Props {
+interface CustomTableProps {
   rowData: any;
 }
 
-const CustomTable: FC<Props> = ({ rowData }) => {
+const CustomTable: FC<CustomTableProps> = ({ rowData }) => {
   const columnDefs = [
     {
       field: 'name',

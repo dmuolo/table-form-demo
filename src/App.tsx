@@ -1,31 +1,15 @@
-import { Alert, CssBaseline, Snackbar, ThemeProvider, createTheme } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { Alert, CssBaseline, Snackbar, ThemeProvider } from '@mui/material';
+import { FC, useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.css';
+import { theme } from './assets/theme';
 import { CustomToolbar, MainContainer } from './components/index';
 import { subscribeToEmployeeRecordUpdated } from './utils/pubsub';
 import { DetailView, TableView } from './views';
 
-const theme = createTheme({
-  spacing: 8,
-  palette: {
-    primary: {
-      main: '#012d61',
-    },
-    secondary: {
-      main: '#ff0000',
-    },
-    info: {
-      main: '#f0b422',
-    },
-  },
-  typography: {
-    fontFamily: 'Gotham A, Gotham B, Helvetica Neue, Helvetica, Arial, sans-serif',
-    fontSize: 16,
-  },
-});
+interface Props {}
 
-function App() {
+const App: FC<Props> = () => {
   const [isSnackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
 
@@ -61,6 +45,6 @@ function App() {
       </Router>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

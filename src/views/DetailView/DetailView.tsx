@@ -68,7 +68,7 @@ const DetailView: FC<Props> = () => {
     <form onSubmit={formik.handleSubmit}>
       <Grid container width='1000px' height='500px' spacing={1}>
         <Grid container item>
-          <Grid item xs={6}>
+          <Grid item xs={5}>
             <TextField
               name='firstName'
               label='First Name'
@@ -81,7 +81,8 @@ const DetailView: FC<Props> = () => {
               disabled={formik.isSubmitting}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={2} />
+          <Grid item xs={5}>
             <TextField
               name='lastName'
               label='Last Name'
@@ -96,7 +97,7 @@ const DetailView: FC<Props> = () => {
           </Grid>
         </Grid>
         <Grid container item>
-          <Grid item xs={6}>
+          <Grid item xs={5}>
             <TextField
               name='position'
               label='Position'
@@ -109,7 +110,8 @@ const DetailView: FC<Props> = () => {
               disabled={formik.isSubmitting}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={2} />
+          <Grid item xs={5}>
             <TextField
               fullWidth
               id='location'
